@@ -9,7 +9,7 @@ function SecondCard() {
       <Card className="p-1 pb-0 mt-2 mb-3" style={{ border: "unset" }}>
         <div className="d-flex justify-content-center align-items-center">
           <Card.Img
-            style={{ height: "200px", width: "140px" }}
+            style={{ height: "200px", width: "140px", maxWidth: "100%" }}
             variant="top"
             src={Book}
             className="m-auto mt-3 mb-3"

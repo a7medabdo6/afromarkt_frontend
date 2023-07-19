@@ -12,7 +12,7 @@ function SecondCard() {
       >
         <div className="d-flex justify-content-center align-items-center">
           <Card.Img
-            style={{ height: "215px", width: "295px" }}
+            style={{ height: "215px", width: "295px", maxWidth: "100%" }}
             variant="top"
             src={Car}
             className="m-auto mt-3 mb-3"

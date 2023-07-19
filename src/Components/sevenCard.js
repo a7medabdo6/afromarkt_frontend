@@ -8,7 +8,7 @@ function SecondCard() {
     <>
       <div className="d-flex justify-content-center align-items-center">
         <Card.Img
-          style={{ height: "350", width: "300px" }}
+          style={{ height: "350", width: "300px", maxWidth: "100%" }}
           variant="top"
           src={Booster}
           className="m-auto mt-3 mb-3"

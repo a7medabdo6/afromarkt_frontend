@@ -1,29 +1,30 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import product from "../assets/product.png";
+import product from "../assets/schoolbag.png";
 import N from "../assets/Naira.png";
 import NairaGrey from "../assets/NairaGrey.png";
 import { COLORS } from "../consatants";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { addToCart } from "../Redux/Slices/Cart";
 import { useState } from "react";
+
 function CardC({ title, ship }) {
-  const { Items } = useSelector((state) => state.Cart);
   const [added, setAdded] = useState(false);
+
   const Dispatch = useDispatch();
   const AddToCart = () => {
     Dispatch(addToCart());
     setAdded(true);
   };
   return (
-    <Card style={{ border: "unset", marginBlock: 10 }}>
+    <Card style={{ border: "unset", margin: 20, padding: 10 }}>
       <div
         style={{
           height: "40px",
           width: "40px",
           borderRadius: "100px",
-          backgroundColor: COLORS.grey,
-          color: COLORS.red,
+          backgroundColor: COLORS.red,
+          color: "white",
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
@@ -32,17 +33,46 @@ function CardC({ title, ship }) {
           fontWeight: "bold",
           position: "absolute",
           right: "10px",
-          top: "10px",
+          top: "20px",
         }}
       >
         -10%
       </div>
       <Card.Img
-        style={{ height: "165px", width: "165px", maxWidth: "100%" }}
+        style={{ height: "124px", width: "99px" }}
         variant="top"
         src={product}
         className="m-auto mt-3 mb-3"
       />
+      <div className="d-flex justify-content-center">
+        <p
+          style={{
+            backgroundColor: "#4D2E2B",
+            width: 10,
+            height: 10,
+            borderRadius: 100,
+            marginInline: 3,
+          }}
+        ></p>
+        <p
+          style={{
+            backgroundColor: "black",
+            width: 10,
+            height: 10,
+            borderRadius: 100,
+            marginInline: 3,
+          }}
+        ></p>
+        <p
+          style={{
+            backgroundColor: "#B05E2B",
+            width: 10,
+            height: 10,
+            borderRadius: 100,
+            marginInline: 3,
+          }}
+        ></p>
+      </div>
       <Card.Body>
         <Card.Text style={{ fontSize: "12px" }} className="mb-2">
           {title ? title : "Mini Crossbody Tote Bag"}

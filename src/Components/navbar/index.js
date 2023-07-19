@@ -5,13 +5,16 @@ import InputGroup from "react-bootstrap/InputGroup";
 import Form from "react-bootstrap/Form";
 import { Search } from "react-bootstrap-icons";
 import Button from "react-bootstrap/Button";
+import { useSelector } from "react-redux";
 
-function index() {
+function Index() {
+  const { Items } = useSelector((state) => state.Cart);
+
   return (
     <div>
       <Row className=" justify-content-start align-items-center">
         <Col
-          className="d-flex flex-row justify-content-center align-items-center  d-none d-sm-flex"
+          className="d-flex flex-row justify-content-center align-items-center  d-none d-md-flex"
           md={3}
         >
           <img src={require("../../assets/logo.png")} />
@@ -30,7 +33,7 @@ function index() {
           </InputGroup>
         </Col>
         <Col
-          className="d-flex flex-row justify-content-between align-items-center d-none d-sm-flex"
+          className="d-flex flex-row justify-content-between align-items-center d-none d-md-flex"
           md={3}
         >
           <Button
@@ -44,11 +47,25 @@ function index() {
             Sign in
           </Button>{" "}
           <img src={require("../../assets/man.png")} />
-          <img src={require("../../assets/cart.png")} />
+          <div style={{ position: "relative" }}>
+            <span
+              style={{
+                fontWeight: "900",
+                color: " #808080b5",
+                position: "absolute",
+                top: " -12px",
+                right: " -3px",
+                fontSize: "13px",
+              }}
+            >
+              {Items}
+            </span>
+            <img src={require("../../assets/cart.png")} />
+          </div>
         </Col>
       </Row>
       <h4
-        className="pt-2 pb-2 text-white mb-3 pl-3 d-none d-sm-block"
+        className="pt-2 pb-2 text-white mb-3 pl-3 d-none d-md-block"
         style={{ backgroundColor: COLORS.main, fontWeight: "600" }}
       >
         <Row className=" ">
@@ -75,4 +92,4 @@ function index() {
   );
 }
 
-export default index;
+export default Index;
