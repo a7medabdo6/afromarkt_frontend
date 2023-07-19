@@ -10,10 +10,12 @@ import Footer from "../Components/footer";
 import BreadCrumb from "../Components/BreadCrumb";
 import { GetAllProducts } from "../Redux/Slices/Products";
 import { useDispatch } from "react-redux";
+import Products from "../dummy/products.json";
 function Category() {
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(GetAllProducts());
+    console.log(Products, "Products");
   }, []);
   return (
     <Container fluid="sm">
@@ -195,59 +197,81 @@ function Category() {
             src={require("../assets/categoryBanner.png")}
           />
           <Row className="p-4 mb-3 " style={{ backgroundColor: "#FAFAFA" }}>
-            {[1, 1, 1].map((item) => (
-              <Col md={4} xs={6} sm={6}>
-                {" "}
-                <Card
-                  ship="Ships to Nigeria"
-                  title="Brown Leather Bag for School, Laptop Backpack for Men and Women"
-                />
-              </Col>
-            ))}
+            {Products?.map(
+              (item, i) =>
+                i < 3 && (
+                  <Col md={4} xs={6} sm={6}>
+                    {" "}
+                    <Card
+                      image={item?.url}
+                      ship="Ships to Nigeria"
+                      title="Brown Leather Bag for School, Laptop Backpack for Men and Women"
+                    />
+                  </Col>
+                )
+            )}
           </Row>
           <Row className="p-4 mb-3" style={{ backgroundColor: "#FAFAFA" }}>
-            {[1, 1, 1].map((item) => (
-              <Col md={4} xs={6} sm={6}>
-                {" "}
-                <Card
-                  ship="Ships to Nigeria"
-                  title="Brown Leather Bag for School, Laptop Backpack for Men and Women"
-                />
-              </Col>
-            ))}
+            {Products?.map((item, i) =>
+              i > 2 && i < 6 ? (
+                <Col md={4} xs={6} sm={6}>
+                  {" "}
+                  <Card
+                    image={item?.url}
+                    ship="Ships to Nigeria"
+                    title="Brown Leather Bag for School, Laptop Backpack for Men and Women"
+                  />
+                </Col>
+              ) : null
+            )}
           </Row>
           <Row className="p-4 mb-3" style={{ backgroundColor: "#FAFAFA" }}>
-            {[1, 1, 1].map((item) => (
-              <Col md={4} xs={6} sm={6}>
-                {" "}
-                <Card
-                  ship="Ships to Nigeria"
-                  title="Brown Leather Bag for School, Laptop Backpack for Men and Women"
-                />
-              </Col>
-            ))}
+            {Products?.map(
+              (item, i) =>
+                i < 9 &&
+                i > 5 && (
+                  <Col md={4} xs={6} sm={6}>
+                    {" "}
+                    <Card
+                      image={item?.url}
+                      ship="Ships to Nigeria"
+                      title="Brown Leather Bag for School, Laptop Backpack for Men and Women"
+                    />
+                  </Col>
+                )
+            )}
           </Row>
           <Row className="p-4 mb-3" style={{ backgroundColor: "#FAFAFA" }}>
-            {[1, 1, 1].map((item) => (
-              <Col md={4} xs={6} sm={6}>
-                {" "}
-                <Card
-                  ship="Ships to Nigeria"
-                  title="Brown Leather Bag for School, Laptop Backpack for Men and Women"
-                />
-              </Col>
-            ))}
+            {Products?.map(
+              (item, i) =>
+                i < 9 &&
+                i > 5 && (
+                  <Col md={4} xs={6} sm={6}>
+                    {" "}
+                    <Card
+                      image={item?.url}
+                      ship="Ships to Nigeria"
+                      title="Brown Leather Bag for School, Laptop Backpack for Men and Women"
+                    />
+                  </Col>
+                )
+            )}
           </Row>{" "}
           <Row className="p-4 mb-3" style={{ backgroundColor: "#FAFAFA" }}>
-            {[1, 1, 1].map((item) => (
-              <Col md={4} xs={6} sm={6}>
-                {" "}
-                <Card
-                  ship="Ships to Nigeria"
-                  title="Brown Leather Bag for School, Laptop Backpack for Men and Women"
-                />
-              </Col>
-            ))}
+            {Products?.map(
+              (item, i) =>
+                i < 9 &&
+                i > 5 && (
+                  <Col md={4} xs={6} sm={6}>
+                    {" "}
+                    <Card
+                      image={item?.url}
+                      ship="Ships to Nigeria"
+                      title="Brown Leather Bag for School, Laptop Backpack for Men and Women"
+                    />
+                  </Col>
+                )
+            )}
           </Row>{" "}
           <Row>
             <Col md={1}></Col>

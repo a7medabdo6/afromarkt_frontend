@@ -16,6 +16,8 @@ import SimpleSlider from "../Components/Slider";
 import Navbar from "../Components/navbar";
 import Footer from "../Components/footer/index";
 import { Link } from "react-router-dom";
+import Products from "../dummy/main.json";
+
 function App() {
   return (
     <Container fluid="sm">
@@ -62,54 +64,25 @@ function App() {
       </Row>
       <Row style={{ backgroundColor: COLORS.light }} className="pb-4">
         <Head title="Afromarkt Deals" />
-        <Col sm={6} xs={6} md={4} lg={3} className="col-xlg-5">
-          <Card />
-        </Col>
-        <Col sm={6} xs={6} md={4} lg={3} className="col-xlg-5">
-          <Card />
-        </Col>{" "}
-        <Col sm={6} xs={6} md={4} lg={3} className="col-xlg-5">
-          <Card />
-        </Col>{" "}
-        <Col sm={6} xs={6} md={4} lg={3} className="col-xlg-5">
-          <Card />
-        </Col>{" "}
-        <Col sm={6} xs={6} md={4} lg={3} className="col-xlg-5">
-          <Card />
-        </Col>
+        {Products?.map(
+          (item, i) =>
+            i < 5 && (
+              <Col sm={6} xs={6} md={4} lg={3} className="col-xlg-5">
+                <Card image={item?.url} />
+              </Col>
+            )
+        )}
       </Row>
       <Row style={{ backgroundColor: COLORS.light }} className="pb-4">
         <Head title="Browse Other Categories" />
-        <Col sm={6} xs={6} md={4} lg={3} className="col-xlg-5">
-          <SecondCard />
-        </Col>
-        <Col sm={6} xs={6} md={4} lg={3} className="col-xlg-5">
-          <SecondCard />
-        </Col>{" "}
-        <Col sm={6} xs={6} md={4} lg={3} className="col-xlg-5">
-          <SecondCard />
-        </Col>{" "}
-        <Col sm={6} xs={6} md={4} lg={3} className="col-xlg-5">
-          <SecondCard />
-        </Col>{" "}
-        <Col sm={6} xs={6} md={4} lg={3} className="col-xlg-5">
-          <SecondCard />
-        </Col>
-        <Col sm={6} xs={6} md={4} lg={3} className="col-xlg-5">
-          <SecondCard />
-        </Col>{" "}
-        <Col sm={6} xs={6} md={4} lg={3} className="col-xlg-5">
-          <SecondCard />
-        </Col>{" "}
-        <Col sm={6} xs={6} md={4} lg={3} className="col-xlg-5">
-          <SecondCard />
-        </Col>{" "}
-        <Col sm={6} xs={6} md={4} lg={3} className="col-xlg-5">
-          <SecondCard />
-        </Col>{" "}
-        <Col sm={6} xs={6} md={4} lg={3} className="col-xlg-5">
-          <SecondCard />
-        </Col>{" "}
+        {Products?.map(
+          (item, i) =>
+            i > 4 && (
+              <Col sm={6} xs={6} md={4} lg={3} className="col-xlg-5">
+                <SecondCard image={item?.url} />
+              </Col>
+            )
+        )}
       </Row>
       <Row style={{ backgroundColor: COLORS.light }} className="pb-4">
         <Head title="African Literature" />

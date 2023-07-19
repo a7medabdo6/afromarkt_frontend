@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { addToCart } from "../Redux/Slices/Cart";
 import { useState } from "react";
 
-function CardC({ title, ship }) {
+function CardC({ title, ship, image }) {
   const [added, setAdded] = useState(false);
 
   const Dispatch = useDispatch();
@@ -41,7 +41,7 @@ function CardC({ title, ship }) {
       <Card.Img
         style={{ height: "124px", width: "99px" }}
         variant="top"
-        src={product}
+        src={image}
         className="m-auto mt-3 mb-3"
       />
       <div className="d-flex justify-content-center">

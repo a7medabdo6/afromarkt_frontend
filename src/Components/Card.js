@@ -7,7 +7,7 @@ import { COLORS } from "../consatants";
 import { useDispatch, useSelector } from "react-redux";
 import { addToCart } from "../Redux/Slices/Cart";
 import { useState } from "react";
-function CardC({ title, ship }) {
+function CardC({ title, ship, image }) {
   const { Items } = useSelector((state) => state.Cart);
   const [added, setAdded] = useState(false);
   const Dispatch = useDispatch();
@@ -40,7 +40,7 @@ function CardC({ title, ship }) {
       <Card.Img
         style={{ height: "165px", width: "165px", maxWidth: "100%" }}
         variant="top"
-        src={product}
+        src={image}
         className="m-auto mt-3 mb-3"
       />
       <Card.Body>

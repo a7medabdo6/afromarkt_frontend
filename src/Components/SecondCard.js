@@ -4,7 +4,7 @@ import grocery from "../assets/grocery.png";
 import N from "../assets/Naira.png";
 import NairaGrey from "../assets/NairaGrey.png";
 import { COLORS } from "../consatants";
-function SecondCard() {
+function SecondCard({ image }) {
   return (
     <>
       <Card
@@ -18,7 +18,7 @@ function SecondCard() {
           <Card.Img
             style={{ height: "80px", width: "62px", maxWidth: "100%" }}
             variant="top"
-            src={grocery}
+            src={image}
             className="m-auto mt-3 mb-3"
           />
         </div>
